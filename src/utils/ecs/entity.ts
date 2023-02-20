@@ -1,20 +1,20 @@
-import { ComponentInterface } from './component.h'
+import { IComponent } from './component.h'
 
 type constr<T> = { new(...args: unknown[]): T }
 
 export abstract class Entity {
-    protected _components: ComponentInterface[] = []
+    protected _components: IComponent[] = []
 
-    public get Components(): ComponentInterface[] {
+    public get Components(): IComponent[] {
         return this._components
     }
 
-    public AddComponent(component: ComponentInterface): void {
+    public AddComponent(component: IComponent): void {
         this._components.push(component)
         component.Entity = this
     }
 
-    public GetComponent<C extends ComponentInterface>(constr: constr<C>): C {
+    public GetComponent<C extends IComponent>(constr: constr<C>): C {
         for (const component of this._components) {
             if (component instanceof constr) {
                 return component as C
@@ -23,8 +23,8 @@ export abstract class Entity {
         throw new Error(`Componente ${constr.name} não encontrado na Entidade ${this.constructor.name}.`)
     }
 
-    public RemoveComponent<C extends ComponentInterface>(constr: constr<C>): void {
-        let toRemove: ComponentInterface | undefined
+    public RemoveComponent<C extends IComponent>(constr: constr<C>): void {
+        let toRemove: IComponent | undefined
         let index: number | undefined
 
         for (let i = 0; i < this._components.length; i++) {
@@ -42,7 +42,7 @@ export abstract class Entity {
         }
     }
 
-    public HasComponent<C extends ComponentInterface>(constr: constr<C>): boolean {
+    public HasComponent<C extends IComponent>(constr: constr<C>): boolean {
         for (const component of this._components) {
             if (component instanceof constr) {
                 return true

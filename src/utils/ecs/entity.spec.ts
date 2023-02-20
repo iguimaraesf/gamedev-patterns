@@ -1,14 +1,14 @@
 import { Entity } from './entity'
-import { ComponentInterface } from './component.h'
+import { IComponent } from './component.h'
 
 class E extends Entity { }
-class C1 implements ComponentInterface {
+class C1 implements IComponent {
     public Entity: E
 }
-class C2 implements ComponentInterface {
+class C2 implements IComponent {
     public Entity: E
 }
-class C3 implements ComponentInterface {
+class C3 implements IComponent {
     public Entity: E
 }
 describe('>>> Entity', () => {
