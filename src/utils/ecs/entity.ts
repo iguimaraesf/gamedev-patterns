@@ -1,9 +1,9 @@
-import { IUpdate } from '../update.h'
+import { IAwake, IUpdate } from '../lifecycle'
 import { IComponent } from './component.h'
 
 type constr<T> = { new(...args: unknown[]): T }
 
-export abstract class Entity implements IUpdate {
+export abstract class Entity implements IAwake, IUpdate {
     protected _components: IComponent[] = []
 
     public get Components(): IComponent[] {
@@ -21,7 +21,7 @@ export abstract class Entity implements IUpdate {
                 return component as C
             }
         }
-        throw new Error(`Componente ${constr.name} não encontrado na Entidade ${this.constructor.name}.`)
+        throw new Error(`Componente "${constr.name}" não encontrado na Entidade "${this.constructor.name}".`)
     }
 
     public RemoveComponent<C extends IComponent>(constr: constr<C>): void {
@@ -52,6 +52,11 @@ export abstract class Entity implements IUpdate {
         return false
     }
 
+    public Awake(): void {
+        for (const component of this._components) {
+            component.Awake()
+        }
+    }
     public Update(deltaTime: number): void {
         for (const component of this._components) {
             component.Update(deltaTime)
