@@ -4,12 +4,15 @@ import { IComponent } from './component.h'
 class E extends Entity { }
 class C1 implements IComponent {
     public Entity: E
+    public Update(deltaTime: number): void { /*...*/ }
 }
 class C2 implements IComponent {
     public Entity: E
+    public Update(deltaTime: number): void { /*...*/ }
 }
 class C3 implements IComponent {
     public Entity: E
+    public Update(deltaTime: number): void { /*...*/ }
 }
 describe('>>> Entity', () => {
     let e: E
@@ -45,10 +48,30 @@ describe('>>> Entity', () => {
         expect(e.HasComponent(C2)).toBeFalsy()
 
         expect(c2.Entity).toBeNull()
-        expect(c1.Entity).toBeTruthy()
+        expect(c1.Entity).not.toBeNull()
     })
     it('should throw error if component wasn\'t found', () => {
         expect(e.HasComponent(C1)).toBeFalsy()
         expect(() => e.GetComponent(C1)).toThrow()
     })
+    it('should update all Components', () => {
+        const spy1 = jest.spyOn(c1, 'Update')
+        const spy2 = jest.spyOn(c2, 'Update')
+        const spy3 = jest.spyOn(c3, 'Update')
+    
+        expect(spy1).not.toBeCalled()
+        expect(spy2).not.toBeCalled()
+        expect(spy3).not.toBeCalled()
+    
+        e.AddComponent(c1)
+        e.AddComponent(c2)
+        e.AddComponent(c3)
+    
+        const deltaTime = 12
+        e.Update(deltaTime)
+    
+        expect(spy1).toBeCalledWith(deltaTime)
+        expect(spy2).toBeCalledWith(deltaTime)
+        expect(spy3).toBeCalledWith(deltaTime)
+      })
 })
