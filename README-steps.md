@@ -35,3 +35,10 @@ Awesome! We did a lot, but nothing changed on the screen: we still can only see 
 
 [Drawing the grid 3/5](https://medium.datadriveninvestor.com/building-a-game-with-typescript-drawing-grid-3-5-1fb94211c4aa)
 
+Cool! That was a lot of coding! At the beginning of this post, we had all drawing functionality hardcoded in the Game entity, making it almost like a ‘god object’.
+
+We refactored our code and moved all drawings to where it belongs: NodeDrawComponent. Along the way, we identify the signature of the Node and are to determine its location using Start, End coordinates, and Index position within the Grid. Vector2D, the new structure we introduced, helps us to deal with two-dimensional properties.
+
+[Drawing the grid 4/5](https://medium.com/swlh/building-a-game-with-typescript-iii-drawing-grid-4-5-398af1dd638d)
+
+Nice! In this post, we created our own little rendering system, the abstraction layer on top of the browser’s canvas API.
