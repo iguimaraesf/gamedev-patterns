@@ -42,3 +42,11 @@ We refactored our code and moved all drawings to where it belongs: NodeDrawCompo
 [Drawing the grid 4/5](https://medium.com/swlh/building-a-game-with-typescript-iii-drawing-grid-4-5-398af1dd638d)
 
 Nice! In this post, we created our own little rendering system, the abstraction layer on top of the browser’s canvas API.
+
+[Drawing the grid 5/5](https://medium.com/@gregsolo/building-a-game-with-typescript-drawing-grid-5-5-49454917b3af)
+
+Awesome! This concludes Chapter III, “Drawing the Grid”. We accomplished a lot in this final part of the Chapter! We discussed the notion of ```layers``` of canvases in our game and set up a provider of the ```Background``` layer. We used it within ```NodeDrawComponent```, which now continuously redraws ```Node``` every frame, ready to react on any change.
+
+This chapter was dedicated to drawing the Grid: the fundamental piece of our game. Let’s stop for a moment and appreciate the path we have passed.
+
+We started our first unsure steps by drawing the grid directly and “dirty” with the browser’s canvas API. We then established a structural hierarchy of the game by defining ```Grid``` and ```Node``` entities. We found it reasonable to make drawing logic a specific component of the ```Node```: ```NodeDrawComponent```. We make it possible to easily pass tuple data, like coordinates and sizes, thanks to the ```Vector2d``` structure. Finally, we created a small rendering engine and layer system. It sure has been a long journey, but I hope you enjoined it!
