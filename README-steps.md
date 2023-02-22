@@ -32,3 +32,6 @@ Awesome! We have drawn our entire grid on the screen and make it look good. We a
 [Drawing the grid 2/5](https://javascript.plainenglish.io/building-a-game-with-typescript-drawing-grid-2-5-206555719490)
 
 Awesome! We did a lot, but nothing changed on the screen: we still can only see the old “dirty” drawing of the Grid. But we accomplished a lot: we learned how to test the functionality of the class without creating the instance, we introduced two new entities: ```Grid``` and ```Node```, decoupled them from the Game and even set up our very first component!
+
+[Drawing the grid 3/5](https://medium.datadriveninvestor.com/building-a-game-with-typescript-drawing-grid-3-5-1fb94211c4aa)
+
