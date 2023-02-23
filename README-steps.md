@@ -50,3 +50,8 @@ Awesome! This concludes Chapter III, “Drawing the Grid”. We accomplished a l
 This chapter was dedicated to drawing the Grid: the fundamental piece of our game. Let’s stop for a moment and appreciate the path we have passed.
 
 We started our first unsure steps by drawing the grid directly and “dirty” with the browser’s canvas API. We then established a structural hierarchy of the game by defining ```Grid``` and ```Node``` entities. We found it reasonable to make drawing logic a specific component of the ```Node```: ```NodeDrawComponent```. We make it possible to easily pass tuple data, like coordinates and sizes, thanks to the ```Vector2d``` structure. Finally, we created a small rendering engine and layer system. It sure has been a long journey, but I hope you enjoined it!
+
+## Chapter 04
+[Ships 1/4](https://levelup.gitconnected.com/building-a-game-with-typescript-colors-and-layers-337b0e4d71f)
+
+Cool! We made all the necessary preparations to set up a stage for drawing Ships. We created a convenient tool that helps us work with colors. Also, we updated our rendering engine to support a new primitive shape: circle. And of course, we introduced a new canvas layer: ```Foreground```, a special place for our future ships to ensure they always stay on top of the image.
