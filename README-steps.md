@@ -55,3 +55,7 @@ We started our first unsure steps by drawing the grid directly and “dirty” w
 [Ships 1/4](https://levelup.gitconnected.com/building-a-game-with-typescript-colors-and-layers-337b0e4d71f)
 
 Cool! We made all the necessary preparations to set up a stage for drawing Ships. We created a convenient tool that helps us work with colors. Also, we updated our rendering engine to support a new primitive shape: circle. And of course, we introduced a new canvas layer: ```Foreground```, a special place for our future ships to ensure they always stay on top of the image.
+
+[Ships 2/4](https://medium.datadriveninvestor.com/building-a-game-with-typescript-team-and-fleet-f223d39e9248)
+
+Nicely done! In this tutorial, we discussed the notion of Team and even set up two teams in our game. We also created our very own ```Fleet```, that is, a collection of ```Ships```. We are finally done with the preparations!
