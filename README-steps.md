@@ -59,3 +59,7 @@ Cool! We made all the necessary preparations to set up a stage for drawing Ships
 [Ships 2/4](https://medium.datadriveninvestor.com/building-a-game-with-typescript-team-and-fleet-f223d39e9248)
 
 Nicely done! In this tutorial, we discussed the notion of Team and even set up two teams in our game. We also created our very own ```Fleet```, that is, a collection of ```Ships```. We are finally done with the preparations!
+
+[Ships 3/4](https://levelup.gitconnected.com/building-a-game-with-typescript-drawing-ship-14e6c19caa38)
+
+This was great! We introduced new piece of the puzzle, ```ShipDrawComponent```, that is accountable to draw ship utilizing our humble rendering engine. We also tried something we never did before in this tutorial: we used Test Driven Development to cook this component.
