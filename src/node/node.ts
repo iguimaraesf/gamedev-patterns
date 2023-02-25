@@ -1,3 +1,4 @@
+import { CanvasLayer } from '@/canvas-layer'
 import { Entity, Vector2D } from '@/utils'
 import { NodeDrawComponent } from './components'
 
@@ -24,9 +25,42 @@ export class Node extends Entity {
         )
     }
 
+    /**
+     * @todo replace temp property with real functionality
+     */
+    public IsActive = false
+
+    public Occupies(point: Vector2D): boolean {
+        if (point.x < this.Start.x) {
+            return false
+        }
+   
+        if (point.x > this.End.x) {
+            return false
+        }
+   
+        if (point.y < this.Start.y) {
+            return false
+        }
+   
+        if (point.y > this.End.y) {
+            return false
+        }
+   
+        return true
+    }
+
     public Awake(): void {
         this.AddComponent(new NodeDrawComponent())
 
         super.Awake()
+
+        // @todo remove temp dirty round
+        document.body.addEventListener('click', (e: MouseEvent) => {  
+            const point = CanvasLayer.Background.CalcLocalPointFrom(new Vector2D(e.clientX, e.clientY))
+            if (point && this.Occupies(point)) {
+                this.IsActive = true
+            }
+        })
     }
- }
+}

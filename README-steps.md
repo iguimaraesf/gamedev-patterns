@@ -73,3 +73,10 @@ We started by introducing a new utility: ```Color``` that helps us deal with RGB
 Also, we spend some time deliberating about conflict in games and the notion of “team”, which led us to introduce new members of our system. And then we jumped straight to the ```Fleet```, a collection of ```Ships```. We used it to awake, update, and spawn all ```Ships``` that belong to a particular ```Team```.
 
 Finally, we drew the ```Ships```! We did so by introducing 2 new components: ```Draw``` and ```Locomotion```, since ```Ship``` has to have ```position``` ```Node``` to be shown.
+
+## Chapter 05
+[Input system 1/3](https://itnext.io/building-a-game-with-typescript-input-system-1-3-46d0b3dd7662)
+
+Awesome job! We did the very first, “dirty” round of code for our little “input system”. A plethora of questions remains unanswered. We are listening to the event on every single ```Node```. Which means, we react to the same event 36 times (that’s the number of ```Nodes``` we have now)? Is there a better way?
+
+Also, what if we have something else that is clickable, not just ```Node```? Do we have to repeat the same code we just wrote within ```Awake``` for every element we want to click?
