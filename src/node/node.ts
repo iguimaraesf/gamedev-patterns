@@ -10,7 +10,14 @@ export class Node extends Entity {
         super()
     }
 
-    public get Size(): Vector2D {
+    public get Center(): Vector2D {
+        return new Vector2D(
+            this.Start.x + this.Size.x / 2,
+            this.Start.y + this.Size.y / 2
+        )
+    }
+
+      public get Size(): Vector2D {
         return new Vector2D(
           this.End.x - this.Start.x,
           this.End.y - this.Start.y

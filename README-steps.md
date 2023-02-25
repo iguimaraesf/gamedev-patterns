@@ -63,3 +63,13 @@ Nicely done! In this tutorial, we discussed the notion of Team and even set up t
 [Ships 3/4](https://levelup.gitconnected.com/building-a-game-with-typescript-drawing-ship-14e6c19caa38)
 
 This was great! We introduced new piece of the puzzle, ```ShipDrawComponent```, that is accountable to draw ship utilizing our humble rendering engine. We also tried something we never did before in this tutorial: we used Test Driven Development to cook this component.
+
+[Ships 4/4](https://medium.com/swlh/building-a-game-with-typescript-ship-and-locomotion-4f5969675993)
+
+Congrats, you made it! This was the last part of Chapter IV “Ships”. It was a long run, but we should be proud of ourselves! Just think about how much we have accomplished!
+
+We started by introducing a new utility: ```Color``` that helps us deal with RGBA colors within the game. Then extended our humble rendering engine and made it render circles. And then we added a new canvas layer, “foreground”, preparing the stage for the key elements of the gameplay: ```Ships```. We made sure this layer always stays on top of others so ```Ships``` won’t be accidentally blocked or painted over something else.
+
+Also, we spend some time deliberating about conflict in games and the notion of “team”, which led us to introduce new members of our system. And then we jumped straight to the ```Fleet```, a collection of ```Ships```. We used it to awake, update, and spawn all ```Ships``` that belong to a particular ```Team```.
+
+Finally, we drew the ```Ships```! We did so by introducing 2 new components: ```Draw``` and ```Locomotion```, since ```Ship``` has to have ```position``` ```Node``` to be shown.

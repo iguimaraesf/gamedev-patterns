@@ -1,3 +1,4 @@
+import { Grid } from '@/grid'
 import { Settings } from '@/settings'
 import { Ship } from '@/ship'
 import { Team } from '@/team'
@@ -6,7 +7,7 @@ import { Entity } from '@/utils'
 export class Fleet extends Entity {
     private _ships: Ship[] = []
 
-    constructor(public readonly Team: Team) {
+    constructor(public readonly Team: Team, private readonly _grid: Grid) {
         super()
     }
 
@@ -24,12 +25,15 @@ export class Fleet extends Entity {
     }
 
     private PrepareShips(): void {
+        const dimension = Settings.grid.dimension
         const fleetSize = Settings.ships.fleetSize
+        const nodes = this._grid.Nodes
 
         for (let i = 0; i < fleetSize; i++) {
-            const ship = new Ship(this)
+            const node = this.Team == Team.A ? nodes[i * dimension] : nodes[nodes.length - 1 - i * dimension]
+            const ship = new Ship(this, node)
             this._ships.push(ship)
             ship.Awake()
         }
-    } 
+    }
 }
