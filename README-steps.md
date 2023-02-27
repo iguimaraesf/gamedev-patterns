@@ -86,3 +86,7 @@ Also, what if we have something else that is clickable, not just ```Node```? Do 
 We did a tremendous job converting out “dirty” code from the previous installment into a more robust system. We started by moving ```addEventListener``` to the top of the “food chain”: all the way to the ```Game``` entity, introducing ```GameInputComponent```. Also, we quickly updated the way we test the ```Game``` entity by getting rid of redundant fake components and checking real-life ones in action.
 
 We then spent a great deal of time talking about ```OnclickComponent```. This component is responsible for making sure those who are interested in the click event will get their message. This discussion led us through different approaches: interface, regular class, and finally abstract class.
+
+[Input system 3/3](https://medium.com/swlh/building-a-game-with-typescript-input-system-3-3-8492552579f1)
+
+This concludes this short Chapter. We learned how we can populate click events from DOM ```body``` down to the specific ```Node``` and make them active. We introduced an abstract ```OnclickComponent``` that gives us the flexibility to delegate an event without the necessity to hold information about specific responders. And of course, we covered all new functionality with proper tests.
