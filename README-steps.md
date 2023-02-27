@@ -90,3 +90,9 @@ We then spent a great deal of time talking about ```OnclickComponent```. This co
 [Input system 3/3](https://medium.com/swlh/building-a-game-with-typescript-input-system-3-3-8492552579f1)
 
 This concludes this short Chapter. We learned how we can populate click events from DOM ```body``` down to the specific ```Node``` and make them active. We introduced an abstract ```OnclickComponent``` that gives us the flexibility to delegate an event without the necessity to hold information about specific responders. And of course, we covered all new functionality with proper tests.
+
+## Chapter 06
+
+[Pathfinding and movement 1/7](https://blog.gregsolo.me/articles/building-a-game-with-typescript-pathfinding-and-movement-17-introduction)
+
+This concludes our introduction to this Chapter. We have set up clear goals by describing the rules of the game when it comes to locomotion. We outlined the main technical challenges we need to overcome in this Chapter, as well as prepared a little debug tool which will help us implement new features with continuously increasing complexity.
