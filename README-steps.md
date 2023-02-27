@@ -80,3 +80,9 @@ Finally, we drew the ```Ships```! We did so by introducing 2 new components: ```
 Awesome job! We did the very first, “dirty” round of code for our little “input system”. A plethora of questions remains unanswered. We are listening to the event on every single ```Node```. Which means, we react to the same event 36 times (that’s the number of ```Nodes``` we have now)? Is there a better way?
 
 Also, what if we have something else that is clickable, not just ```Node```? Do we have to repeat the same code we just wrote within ```Awake``` for every element we want to click?
+
+[Input system 2/3](https://levelup.gitconnected.com/building-a-game-with-typescript-input-system-2-3-cd419e36027c)
+
+We did a tremendous job converting out “dirty” code from the previous installment into a more robust system. We started by moving ```addEventListener``` to the top of the “food chain”: all the way to the ```Game``` entity, introducing ```GameInputComponent```. Also, we quickly updated the way we test the ```Game``` entity by getting rid of redundant fake components and checking real-life ones in action.
+
+We then spent a great deal of time talking about ```OnclickComponent```. This component is responsible for making sure those who are interested in the click event will get their message. This discussion led us through different approaches: interface, regular class, and finally abstract class.

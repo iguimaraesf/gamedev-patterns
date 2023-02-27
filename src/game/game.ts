@@ -2,6 +2,7 @@ import { Fleet } from '@/fleet'
 import { Grid } from '@/grid'
 import { Team } from '@/team'
 import { Entity } from '@/utils'
+import { GameInputComponent } from './components'
 
 export class Game extends Entity {
     private _entities: Entity[] = []
@@ -13,6 +14,7 @@ export class Game extends Entity {
     private _lastTimestamp = 0
 
     public Awake(): void {
+        this.AddComponent(new GameInputComponent())
         super.Awake()
 
         // instantiate and Grid to the list of children
