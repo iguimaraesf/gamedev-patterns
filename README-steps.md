@@ -108,3 +108,7 @@ Awesome job! We have prepared the utilities we'll need to implement our Pathfind
 [Pathfinding and movement 4/7](https://blog.gregsolo.me/articles/building-a-game-with-typescript-pathfinding-and-movement-47-pathfinder)
 
 Awesome job! It was not an easy installment but you did it! You prepared your very-own implementation of Pathfinder. We will continue on this in the next article: we are going to apply this algorithm to our Grid. We also are going to add one more debug tool to illustrate the path and make sure it works correctly. Cannot wait to see you then!
+
+[Pathfinding and movement 5/7](https://blog.gregsolo.me/articles/building-a-game-with-typescript-pathfinding-and-movement-57-finding-the-path)
+
+Congrats, you did it! You have a fully functioning path-finding solution for this game! No matter where Ship may stand, we can quickly determine a path to the desired destination. 

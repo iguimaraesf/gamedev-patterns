@@ -1,8 +1,8 @@
 import { Ship } from '@/ship'
-import { Entity, Vector2D } from '@/utils'
+import { Entity, IGraphNode, Vector2D } from '@/utils'
 import { NodeDrawComponent } from './components'
 
-export class Node extends Entity {
+export class Node extends Entity implements IGraphNode {
     constructor(
         public readonly Start: Vector2D,
         public readonly End: Vector2D,
@@ -12,6 +12,10 @@ export class Node extends Entity {
         super()
     }
 
+    public get Position(): Vector2D {
+        return this.Index
+    }
+
     public get Center(): Vector2D {
         return new Vector2D(
             this.Start.x + this.Size.x / 2,
@@ -19,19 +23,19 @@ export class Node extends Entity {
         )
     }
 
-      public get Size(): Vector2D {
+    public get Size(): Vector2D {
         return new Vector2D(
-          this.End.x - this.Start.x,
-          this.End.y - this.Start.y
+            this.End.x - this.Start.x,
+            this.End.y - this.Start.y
         )
     }
 
     /**
      * @todo replace temp property with real functionality
      */
-    public IsActive = false
     public Ship: Ship | null = null
     public IsInLocomotionRange = false
+    public IsOnPath = false
 
     public Occupies(point: Vector2D): boolean {
         if (point.x < this.Start.x) {

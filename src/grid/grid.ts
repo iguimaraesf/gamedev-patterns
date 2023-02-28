@@ -1,10 +1,17 @@
-import { Entity, Vector2D } from '@/utils'
+import { Entity, IGraph, IGraphNode, Vector2D } from '@/utils'
 import { Node } from '@/node'
 import { Settings } from '@/settings'
 import { GridOnclickComponent } from './components'
+import { Pathfinder } from '@/pathfinder'
+import { Ship } from '@/ship'
 
-export class Grid extends Entity {
+export class Grid extends Entity implements IGraph {
     private _nodes: Node[] = []
+    private _pathfinder = new Pathfinder(this, Grid.Heuristic)
+    private _currentPath: Node[] = []
+
+    public static Heuristic = (a: IGraphNode, b: IGraphNode): number => Math.abs(a.Position.x - b.Position.x) + Math.abs(a.Position.y - b.Position.y)
+    public ActiveShip: Ship | null = null
 
     public get Nodes(): Node[] {
         return this._nodes
@@ -23,7 +30,25 @@ export class Grid extends Entity {
             node.Awake()
         }
     }
-    
+
+    public GetCost(a: Node, b: Node): number {
+        return 1
+    }
+
+    public GetNeighborsOf(node: Node): Node[] {
+        return node.Neighbors
+    }
+
+    public DeterminePathTo(node: Node): void {
+        this._currentPath.forEach(item => item.IsOnPath = false)
+        if (!this.ActiveShip) {
+            return
+        }
+
+        this._currentPath = this._pathfinder.CalculatePath(this.ActiveShip.Node, node) as Node[]
+        this._currentPath.forEach(item => item.IsOnPath = true)
+    }
+
     private InitNodes(): void {
         const size = Settings.grid.nodeSize
         const offset = Settings.grid.nodeOffset
