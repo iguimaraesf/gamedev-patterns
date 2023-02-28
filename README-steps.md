@@ -100,3 +100,7 @@ This concludes our introduction to this Chapter. We have set up clear goals by d
 [Pathfinding and movement 2/7](https://blog.gregsolo.me/articles/building-a-game-with-typescript-pathfinding-and-movement-27-highlighting-locomotion-range)
 
 Phew! This was a long article but I hope you enjoyed it! We wrote a lot of code this time and should be proud of ourselves! First, we introduced the notion of “neighbors” of the ```Node```: link to a bordering ```Nodes``` which we then used to traverse and highlight all Nodes in a specific, configurable range. We added ```Ship``` to the ```Node``` so the latter has a chance to know if it's occupied now by any ```Ship```. We use debug tools to display if ```Node``` is indeed aware of the presence of the ```Ship```. We also refactored ```ShipLocomotionComponent``` to always have a reference to the ```Node```. And finally, introduced the concept of an ”active” ```Ship```.
+
+[Pathfinding and movement 3/7](https://blog.gregsolo.me/articles/building-a-game-with-typescript-pathfinding-and-movement-37-graph-and-priority-queue)
+
+Awesome job! We have prepared the utilities we'll need to implement our Pathfinder. The next installment will be all about it. Cannot wait to see you then!
