@@ -1,5 +1,6 @@
 import { Fleet } from '@/fleet'
 import { Node } from '@/node'
+import { Settings } from '@/settings'
 import { Entity, Vector2D } from '@/utils'
 import { ShipDrawComponent, ShipLocomotionComponent } from './components'
 
@@ -9,8 +10,7 @@ export class Ship extends Entity {
     constructor(public readonly Factory: Fleet, node: Node) {
         super()
 
-        this._locomotionComponent = new ShipLocomotionComponent()
-        this._locomotionComponent.Node = node
+        this._locomotionComponent = new ShipLocomotionComponent(node)
     }
 
     public get Position(): Vector2D | null {
@@ -20,8 +20,22 @@ export class Ship extends Entity {
     public Awake(): void {
         this.AddComponent(this._locomotionComponent)
         this.AddComponent(new ShipDrawComponent())
-        this.AddComponent(new ShipLocomotionComponent())
+        // this.AddComponent(new ShipLocomotionComponent())
 
         super.Awake()
+    }
+
+    private _isActive = false
+    
+    public get IsActive(): boolean {
+        return this._isActive
+    }
+
+    public set IsActive(v: boolean) {
+        this._isActive = v
+    
+        if (v) {
+            this._locomotionComponent.Node.FindAndSetInLocomotionRange(Settings.ships.locomotion.range)
+        }
     }
 }

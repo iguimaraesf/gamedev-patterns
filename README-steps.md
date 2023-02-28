@@ -96,3 +96,7 @@ This concludes this short Chapter. We learned how we can populate click events f
 [Pathfinding and movement 1/7](https://blog.gregsolo.me/articles/building-a-game-with-typescript-pathfinding-and-movement-17-introduction)
 
 This concludes our introduction to this Chapter. We have set up clear goals by describing the rules of the game when it comes to locomotion. We outlined the main technical challenges we need to overcome in this Chapter, as well as prepared a little debug tool which will help us implement new features with continuously increasing complexity.
+
+[Pathfinding and movement 2/7](https://blog.gregsolo.me/articles/building-a-game-with-typescript-pathfinding-and-movement-27-highlighting-locomotion-range)
+
+Phew! This was a long article but I hope you enjoyed it! We wrote a lot of code this time and should be proud of ourselves! First, we introduced the notion of “neighbors” of the ```Node```: link to a bordering ```Nodes``` which we then used to traverse and highlight all Nodes in a specific, configurable range. We added ```Ship``` to the ```Node``` so the latter has a chance to know if it's occupied now by any ```Ship```. We use debug tools to display if ```Node``` is indeed aware of the presence of the ```Ship```. We also refactored ```ShipLocomotionComponent``` to always have a reference to the ```Node```. And finally, introduced the concept of an ”active” ```Ship```.
