@@ -53,7 +53,7 @@ describe('>>> Grid', () => {
         it('should NOT calculate path if there is no currently active ship', () => {
             grid.ActiveShip = null
 
-            grid.DeterminePathTo(destination)
+            grid.CalcPathAndMoveActive(destination)
 
             expect(grid.Nodes.some(node => node.IsOnPath)).toBeFalsy()
         })
@@ -61,7 +61,7 @@ describe('>>> Grid', () => {
         it('should calculate path if there is currently active ship', () => {
             grid.ActiveShip = mockShipFactory(mockFleetFactory(), grid.Nodes[0])
 
-            grid.DeterminePathTo(destination)
+            grid.CalcPathAndMoveActive(destination)
 
             const path = grid.Nodes.filter(node => node.IsOnPath)
             expect(path[0].Index).toStrictEqual(new Vector2D(1, 0))

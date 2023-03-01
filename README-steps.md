@@ -112,3 +112,7 @@ Awesome job! It was not an easy installment but you did it! You prepared your ve
 [Pathfinding and movement 5/7](https://blog.gregsolo.me/articles/building-a-game-with-typescript-pathfinding-and-movement-57-finding-the-path)
 
 Congrats, you did it! You have a fully functioning path-finding solution for this game! No matter where Ship may stand, we can quickly determine a path to the desired destination. 
+
+[Pathfinding and movement 6/7](https://blog.gregsolo.me/articles/building-a-game-with-typescript-pathfinding-and-movement-6-instant-locomotion)
+
+And that's it! In this installment we finally made our Ship moving along the board. It was a long journey with a few setbacks and surprise issues but you made it all the way to the end! Congrats!

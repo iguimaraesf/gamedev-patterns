@@ -21,6 +21,10 @@ export class Ship extends Entity {
         return this._locomotionComponent.Position
     }
 
+    public get PreviousPosition(): Vector2D | null {
+        return this._locomotionComponent.PreviousPosition
+    }
+
     public Awake(): void {
         this.AddComponent(this._locomotionComponent)
         this.AddComponent(new ShipDrawComponent())
@@ -41,5 +45,13 @@ export class Ship extends Entity {
         if (v) {
             this._locomotionComponent.Node.FindAndSetInLocomotionRange(Settings.ships.locomotion.range)
         }
+    }
+
+    public Move(byPath: Node[]): void {
+        this._locomotionComponent.Path = byPath
+    }
+
+    public OnMoveCompleted(node: Node): void {
+        this.Node.FindAndSetInLocomotionRange(Settings.ships.locomotion.range)
     }
 }
