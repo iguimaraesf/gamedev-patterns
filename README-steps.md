@@ -116,3 +116,9 @@ Congrats, you did it! You have a fully functioning path-finding solution for thi
 [Pathfinding and movement 6/7](https://blog.gregsolo.me/articles/building-a-game-with-typescript-pathfinding-and-movement-6-instant-locomotion)
 
 And that's it! In this installment we finally made our Ship moving along the board. It was a long journey with a few setbacks and surprise issues but you made it all the way to the end! Congrats!
+
+[Pathfinding and movement 7/7](https://blog.gregsolo.me/articles/pathfinding-and-movement-7-animated-locomotion)
+
+On this note, it's time to conclude this installment _and_ this chapter! What a journey it was: we started on a solid foundation with a ```Node``` set up on a ```Grid``` and ```Ships``` being ready to take their place. We got inputs ready as well but with all that ```Ships``` were completely immobile!
+
+In this Chapter, we first spent a bit of time defining our goals: how we want our ```Ships``` to move around in this world, and what locomotion even means for us. We then set up ```Pathfinder``` and ```Graph```, and brushed up a bit on different algorithms. Finally, we got to prepare ```Locomotion``` components: starting with a simple, instant one and wrapping up with nice smooth animation.
